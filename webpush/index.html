@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Web Push - fujitayy</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+    <style>
+        .sprite {
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .sprite .rotate-text {
+            animation: rotate-3d 5s linear 0s infinite normal none running;
+        }
+
+        @keyframes rotate-3d {
+            0% {
+                transform: rotate3d(0, 0, 1, 0) translateY(75px);
+            }
+            100% {
+                transform: rotate3d(0, 0, 1, 360deg) translateY(75px);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <div class="sprite">
+            <div class="rotate-text">たのしい Web Push</div>
+        </div>
+        <!-- ここにボタン -->
+    </main>
+    <!-- ここにPUSHCODEのJS -->
+</body>
+
+</html>
