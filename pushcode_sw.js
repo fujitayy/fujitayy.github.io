@@ -123,3 +123,5 @@ self.addEventListener('notificationclose', (e) => {
     let data = e.notification.data;
     PushCodeSw.sendEvent('notificationclose', data.pcData);
 });
+
+self.addEventListener('fetch', (e) => {});
