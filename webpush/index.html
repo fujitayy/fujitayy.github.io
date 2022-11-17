@@ -43,12 +43,26 @@
         <!-- ここにボタン -->
     </main>
     <!-- ここにPUSHCODEのJS -->
-    <script src="https://www.pushcode.jp/dist/js/pushcode.js"></script>
+    <script defer src="https://www.pushcode.jp/dist/js/pushcode.js"></script>
+    <script defer type="module" src="https://www.pushcode.jp/dist/pushcode-components/index.esm.js"></script>
+    <script defer type="module" src="https://www.pushcode.jp/dist/pushcode-components/pushcode-components.esm.js"></script>
+    <script defer nomodule="" src="https://www.pushcode.jp/dist/pushcode-components/pushcode-components.js"></script>
     <script>
-        if (PushCode.isSupport()) {
-            PushCode.init({ domainToken: 'b74507b703937aaea2c92f03dc6b0fd7e4825921b99193e5e9cffef5a3349490', userid: '' });
+    window.addEventListener('load', function() {
+      try {
+        if (PushCode && PushCode.isSupport()) {
+          PushCode.init({ domainToken: 'b74507b703937aaea2c92f03dc6b0fd7e4825921b99193e5e9cffef5a3349490', userid: '' });
+          if (PushCode.components) {
+            PushCode.components.openSubscribeDialog();
+          } else {
             PushCode.requestPermission();
+          }
         }
+      }
+      catch (err) {
+        console.error(err);
+      }
+    });
     </script>
 </body>
 
